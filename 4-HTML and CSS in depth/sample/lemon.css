@@ -1,0 +1,40 @@
+nav ul{
+    list-style:none;
+    text-align: center;
+}
+nav li{
+    display: inline-block;
+}
+header > img{
+    display: block;
+    margin:  auto;
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2rem;
+}
+body{
+    background-color: #edefee;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+section{
+    display: flex;
+}
+article{
+    flex: 1;
+}
+p{
+    font-size: small;
+}
+footer{
+    display: flex;
+}
+footer  div{
+    flex: 1;
+}

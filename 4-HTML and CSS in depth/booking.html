@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Little Lemon</title>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="center-text">
+        <header>
+            <img src="logo.png">
+        </header>
+        <nav class="space">
+                <a href="index.html">Home</a>
+                <a href="Location.html">Location</a>
+                <a href="blog.html">Blog</a>
+        </nav>
+        <main>
+            <h1>Book a Table</h1>
+            <!-- <fieldset id="size">
+                <input type="radio" value="2" name="size">
+                <label for="size">2 person table</label>
+                <input type="radio" value="4" name="size" checked>
+                <label for="size">4 person table</label>
+                <input type="radio" value="6" name="size">
+                <label for="size">6 person table</label>
+            </fieldset>
+            <fieldset id="Location">
+                <input type="radio" value="Indoors" name="Location" checked>Indoors
+                <input type="radio" value="Outdoors" name="Location">Outdoors
+            </fieldset> -->
+            <div>
+                <label for="bookingdate">Booking Date</label>
+                <input type="date" value="bookingdate" name="bookingdate">
+            </div>
+            <br/>
+            <div>
+                <label for="numberofpeople">Number of People</label>
+                <input type="range" value="1" name="bookingdate" min="1" max="10" oninput="this.nextElementSibling.value=this.value">
+                <output>1</output>
+            </div>
+            <br/>
+            <div>
+                <label for="bookinglocation">Location</label>
+                <input id="bookinglocation" name="bookinglocation" list="locations">
+                <datalist id="locations">
+                    <option value="uptown"></option>
+                    <option value="downtown"></option>
+                </datalist>
+            </div>
+            <br/>
+            <select form="" name="numberofpeople" size="1">
+              <optgroup label="Group A">
+                    <option>1 table</option>
+                    <option>2 table</option>
+                    <option>3 table</option>
+                <optgroup label="Group B">
+                    <option>4 table</option>
+                    <option>5 table</option>
+                </optgroup>
+            </select>
+            <br/>
+            
+            <br/>
+            <textarea name="text_01" cols="30" rows="10" required form="" minlength="5" maxlength="200">
+            
+            </textarea>
+            <br/>
+            <fieldset> 
+                <legend>Personal Info</legend> 
+                <label for="fname">First name:</label><br> 
+                <input type="text" id="fname" name="fname" value="John"><br> 
+                <label for="lname">Last name:</label><br> 
+                <input type="text" id="lname" name="lname" value="Doe"><br> 
+              </fieldset> 
+              <fieldset>
+                <legend>Booking Info</legend>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address" value="Lahore"><br>
+                <label for="Order_list">Order list:</label><br>
+                <input type="text" id="Order_list" name="Order_list" value="Order list Available"><br>
+              </fieldset>
+              <fieldset> 
+                <legend>Qualificaiton</legend> 
+                <label for="pdegree">Primary degree:</label><br> 
+                <input type="text" id="pdegree" name="degree" value="Masters"><br> 
+                <label for="fos">Last name:</label><br> 
+                <input type="text" id="fos" name="field" value="Psychology"><br> 
+              </fieldset>
+              <br/>
+              <label for="flowers">Flowers:</label><br/>
+              <input list="flowers" oninput="this.nextElementSibling.value=this.value">
+              <output></output>
+              <datalist id="flowers">
+                <option>Red Rose</option>
+                <option value="Blue Rose">
+              </datalist>
+              <br/>
+              <br/>
+               </main>
+        <footer>
+            <p>Copyright Little Lemon</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,152 @@
+/* General body, html, and container styles for a clean, centered layout */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #FFFEFC;
+    font: helvetica;
+}
+
+.container, .header, .nav {
+    width: 100%; /* Full width to allow for inner centering */
+}
+
+.header, .nav {
+    text-align: center; /* Center the text for header and nav */
+    padding: 10px 0; /* Padding for better spacing */
+}
+
+.logo {
+    width: 300px;
+}
+
+.promo {
+    text-align: center;
+}
+
+/* Header specific styling */
+.header h1 {
+    margin: 0; /* Remove default margin */
+}
+
+/* Nav specific styling */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center navigation items */
+    flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+    border-radius: 10px;
+    background-color: #333333;
+    color: aliceblue;
+    font-size: large;
+    font-weight: bold;
+}
+
+.nav li {
+    padding: 10px 20px; /* Padding around nav items */
+}
+
+.nav a {
+    text-decoration: none; /* Optional: Removes underline from links */
+    color: inherit; /* Inherits text color from parent */
+}
+
+/* Styling for the cards */
+.card {
+    margin-bottom: 20px; /* Adds space below each card */
+    padding-top: 10px;
+    background-color: #FFF1E6;
+    border-radius: 5%;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card1 {
+    text-align: left;
+}
+
+.card2 {
+    text-align: center;
+}
+
+.card3 {
+    text-align: right;
+}
+
+.cardPromo {
+    background-image: url("dishex2.jpg");
+    background-size: 100%;
+    background-position: 50%;
+    height: 200px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.cardPromo, .h1 {
+    font-size: large;
+}
+
+.promoText {
+    padding-top: 20px;
+    font-size: small;
+}
+
+.card img {
+    width: 300px;
+    height: 200px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    margin: 10px;
+    padding-bottom: 20px;
+}
+/* Responsive adjustments for navigation */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+    }
+}
+
+/* Row and column adjustments for proper spacing and alignment */
+.row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.col {
+    padding: 0 5px; /* Adjust padding to ensure 10px between columns */
+    display: flex;
+    justify-content: center; /* Center the card horizontally within the column */
+    flex: 1; /* Ensure columns take up equal space */
+}
+
+/* Footer styling adjustments */
+
+#footCol1, img {
+    width: 15%;
+    padding-bottom: 10px;
+}
+
+
+#footCol1 {
+    text-align: left; /* Align first column text to the left */
+}
+
+#footCol2 {
+    text-align: right; /* Align last column text to the right */
+}

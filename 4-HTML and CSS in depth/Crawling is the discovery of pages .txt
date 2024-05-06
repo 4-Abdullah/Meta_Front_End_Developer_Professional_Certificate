@@ -1,0 +1,3 @@
+A Web crawler, sometimes called a spider or spiderbot and often shortened to crawler, is an Internet bot that systematically browses the World Wide Web and that is typically operated by search engines for the purpose of Web indexing.
+Crawling is the discovery of pages and links that lead to more pages.
+Indexing is storing, analyzing, and organizing the content and connections between pages. 

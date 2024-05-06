@@ -1,0 +1,18 @@
+.a{
+    margin: 30px;
+    transform:skewX(20deg);
+    transition:transform 0.5s;
+}
+.b{
+    margin: 100px;
+    transform:rotate(20deg);
+    transition:transform 0.5s;
+}
+.a:hover{
+    margin: 0px;
+    transform:skewX(0deg);
+}
+.b:hover{
+    margin: 0px;
+    transform:skewX(0deg);
+}

@@ -1,0 +1,73 @@
+/* flex */
+
+/* .center-text{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+}
+.row{
+    display: flex;
+    align-items: stretch;
+}
+
+.row .label{
+    flex: 0,1,auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.row .container{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;   
+}
+
+.row .dish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pasta{
+    background-color: #EE9972;
+}
+
+.pizza{
+    background-color: #F4CE14;
+}
+
+.burrito{
+    background-color: #495E57;
+} */
+
+/* flex Bar Chart */
+
+.center-text{
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap;1 */
+    text-align: center;
+}
+
+.columns{
+    display: flex;
+    height: 400px;
+    max-width: 300px;
+    align-items: stretch;
+    border: 1px solid rgb(0,0,0);
+}
+
+.container{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+.bar{
+    border-right: 1px solid white;
+}
+
+.female {background-color: #F4CE14;}
+.male {background-color: #495E57;}

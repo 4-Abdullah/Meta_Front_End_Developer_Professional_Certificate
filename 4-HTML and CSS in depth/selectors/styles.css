@@ -1,0 +1,46 @@
+*{
+    color: blue;
+    background-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#ID{
+    color: blueviolet;
+}
+
+.class{
+    color: blanchedalmond;
+}
+
+.class:hover{
+    color: blanchedalmond;
+}
+
+div{
+   color: tomato; 
+}
+
+div::first-letter{
+    color: tomato; 
+ }
+
+::marker{
+    color:teal;
+ }
+
+/* Descendent Selectors*/
+#list  li{
+    color:aquamarine;
+} 
+/* Child Selectors */
+#list01 > li{
+    color:aquamarine;
+} 
+/* General Sibling Selector */
+div ~ p{
+    color: yellow;
+} 
+/* Adjacent Sibling */
+p + h1{
+    color:gray;
+}

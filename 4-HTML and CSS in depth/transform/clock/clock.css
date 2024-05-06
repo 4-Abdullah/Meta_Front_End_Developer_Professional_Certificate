@@ -1,0 +1,37 @@
+.clock{
+    margin: 100px;
+    display: grid;
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    border: 5px solid black ;
+    border-radius:50%;
+    /* border-color: black; */
+    transition: 1s;
+}
+/* .clock:hover{
+    border-color: blue;
+    color: aliceblue;
+    background-color:black;
+    transform:rotate(360deg)
+} */
+p{
+    align-self: center;
+    padding-left: 70px;
+}
+.hand{
+    border: 2px solid black;
+    align-self: center;
+    width: 80px;
+    margin: 100px;
+    transition: 1s;
+    /* padding-left: 70px; */
+}
+.hand:hover{
+    /* border: 2px solid black;
+    align-self: center;
+    width: 80px;
+    margin: 100px; */
+    transform:rotate(30deg);
+    transform: translate(10px);
+}

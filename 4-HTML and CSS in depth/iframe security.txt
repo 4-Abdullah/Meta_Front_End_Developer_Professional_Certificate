@@ -1,0 +1,8 @@
+
+
+
+Using the allow attribute means that you can disable browser features for the iframe like payment, microphone and camera access.   
+
+
+Add the sandbox attribute to the iframe element.  
+ This will prevent JavaScript files from running within the iframe and it restricts browser capabilities within the iframe context.  

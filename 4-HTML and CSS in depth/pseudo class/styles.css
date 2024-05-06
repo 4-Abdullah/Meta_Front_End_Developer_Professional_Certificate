@@ -1,0 +1,109 @@
+li:nth-child(2){
+    color: aqua;
+}
+
+li:hover{
+    font-size: larger;
+}
+
+li:active{
+    color: blueviolet;
+}
+
+input:focus{
+    color: rgb(112, 160, 45);
+}
+
+button:disabled{
+    color:cadetblue;
+}
+button:enabled{
+    color: aqua;
+}
+input[type="checkbox"]{
+    color: yellow;
+}
+p::selection{
+    color: chocolate;
+    background-color: chartreuse;
+}
+input::selection{
+    color: chocolate;
+    background-color: chartreuse;
+}
+li::selection{
+    color: chocolate;
+    background-color: chartreuse;
+}
+p::after{
+    content:"!!";
+    background-color: aqua;
+}
+p::before{
+    content:"@@";
+    background-color: aqua;
+}
+a:link{
+    color:cadetblue;
+}
+a:visited{
+    color: black;
+    background-color: navy;
+}
+a:hover{
+    font-size: larger;
+}
+a:active{
+    opacity:0.5;
+}
+p:active{
+    font-style: italic;
+    opacity:0.5;
+}
+p{
+    width: 300px;
+    overflow: hidden;
+    /* writing-mode: vertical-lr; */
+    /* word-wrap: break-word; */
+    /* text-overflow:clip; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+p:hover{
+    overflow:visible;
+}
+.dark{
+    background-color: black;
+    font-family:papyrus;
+    text-shadow: 0 0 30px green,
+     0 0 5px white; 
+}
+div{
+    background-color: black;
+    /* text-align: center;
+    font-family:papyrus;
+    color: rgb(237,237, 151); */
+}
+.glow{
+    /* background-color: black; */
+    text-align: center;
+    font-family:papyrus;
+    color: rgb(255,226, 4);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 31px #fff,
+        0 0 55px rgb(255,226, 4),
+        0 0 91px rgb(255,226, 4), 
+        0 0 100px rgb(255,226, 4), 
+        0 0 122px rgb(255,226, 4),
+        0 0 140px rgb(255,226, 4),
+        0 0 160px rgb(255,226, 4),
+        0 0 180px rgb(255,226, 4),
+        0 0 190px rgb(255,226, 4),
+        0 0 200px rgb(255,226, 4);
+}
+*{
+    background-color: black;
+    color:rgb(103, 102, 102);
+}

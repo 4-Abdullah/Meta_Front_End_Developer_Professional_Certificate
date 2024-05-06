@@ -1,0 +1,11 @@
+@media screen and (-webkit-main-device-pixel-ratio:0)
+ /* and */
+/* screen and (min-resolution: 001dpcm) */
+
+ {p{
+    color: red;
+ }
+    /* selector{
+        property:value;
+    }    */
+}
