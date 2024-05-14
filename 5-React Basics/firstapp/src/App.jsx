@@ -7,7 +7,7 @@ import Cover from './Cover';
 import Pears from './Pears';
 import Apples from './Apples';
 import Promo from './Promo';
-import { FirstNav,SecondNav,ThirdNav,BrotherList } from './function';
+import { FirstNav,SecondNav,ThirdNav,BrotherList } from './Functions';
 
 function App() {
   return (
