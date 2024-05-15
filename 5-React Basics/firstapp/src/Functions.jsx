@@ -26,7 +26,7 @@ export function BrotherList(props){
                 {["Ali","Burhan","Muzamil","Yousaf"].map(item=>item+"-"+props.relation).join(', ')}
             </div>
             <div>
-            {["Ali","Burhan","Muzamil","Yousaf"].map(item=><div key="item">{item+"-"+props.relation}</div>).join(', ')}
+            {/* {["Ali","Burhan","Muzamil","Yousaf"].map(item=><div key="item">{item+"-"+props.relation}</div>).join(', ')} */}
         </div>
         </div>
     )
