@@ -1,7 +1,14 @@
 .App {
   text-align: center;
+  /* background-color: #000; */
 }
-
+.Dark{
+  color: rgb(206, 205, 205);
+  background-color: #282c34;
+}
+.Light{
+  background-color: aliceblue;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,6 +21,7 @@
 }
 
 .App-header {
+  
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -30,6 +38,36 @@
 .promo-section{
   font-weight: bold;
   line-height: 20px;
+}
+.card {
+  margin: 10rem;
+  max-width: 10rem;
+  border: 1px solid gray;
+  padding: 10rem;
+  border-radius: 5rem;
+}
+.card:hover{
+  animation: card none 5s linear;
+  /* transform: translate(500px); */
+}
+
+@keyframes card {
+  from {
+    transform:rotateY(0deg);
+  }
+  to {
+    transform:rotateY(360deg);
+  }
+}
+.btn{
+  color: #282c34;
+}
+.btn:hover{
+  font-size: large;
+  color: #61dafb;
+  background-color: aquamarine;
+  border-radius: 5px;
+  border: 1px solid transparent;
 }
 @keyframes App-logo-spin {
   from {
