@@ -8,6 +8,11 @@ import Pears from './Pears';
 import Apples from './Apples';
 import Promo from './Promo';
 import { FirstNav,SecondNav,ThirdNav,BrotherList } from './Functions';
+import ModeToggler from './ModeToggler'
+import Btn,{FirstBtn,SecondBtn,ThirdBtn,FourthBtn,RandomNumber} from './Btn';
+import Card from './Card';
+import React, {useState} from "react"
+
 
 const bool=false
 const str1="just"
@@ -21,7 +26,7 @@ function Example(props){
   )
 }
 
-function App() {
+function App01() {
   const numbers = [10, 20, 30];
   let logged=true
   return (
@@ -43,8 +48,15 @@ numbers.forEach(number =>{
   }
 })}
       {/* </div> */}
-      <Heading name="Abdullah" color="Orange"/>
+      <Heading name="Abdullah" color="Orange" className="card"/>
       <Main content="This is what i am talking about all this time."/>
+      <Btn/>
+      <FirstBtn/>
+      <SecondBtn/>
+      <ThirdBtn/>
+      <FourthBtn/>
+      <RandomNumber/>
+      <ModeToggler/>
       <Cover>
         <Apples color="Yellow" number="6"/>
         <Pears friend="Peter"/>
@@ -52,10 +64,41 @@ numbers.forEach(number =>{
       {/* Another way to call Sub-Components*/}
       <Cover children={<Apples color="yellow" number="5" />}/>
       <Cover children={<Pears friend="Peter" />}/>
+      
+      <h1>Task: Add three Card elements</h1>
+      <Card a="First card's h2" b="First card's h3"/>
+        <Card a="Second card's h2" b="Second card's h3"/>
+        <Card a="Third card's h2" b="Third card's h3"/>
+        <Btn/>
       <Promo heading="Little Lemon" promoheading="Eat what you can"/>
       <Footer copyright="@Copyright Little Lemon"/>
     </div>
   );
+}
+function App(){
+  const [isDarkMode,setIsDarkMode]=useState(false) 
+
+  function handleClick(){
+     
+          if(isDarkMode===true){
+              console.log("Dark mode is on")
+          }    
+              else{
+                  console.log("Light mode is on")        
+              }
+  }
+  const handle=()=>{
+      setIsDarkMode(!isDarkMode)
+
+  }
+  return(
+      <div className={isDarkMode?"Dark":"Light"}>
+           <button onClick={handleClick} onClickCapture={handle}>
+               {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          </button>
+          {<App01/>}
+      </div>
+  )
 }
 
 export default App;
