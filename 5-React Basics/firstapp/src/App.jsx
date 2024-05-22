@@ -11,7 +11,12 @@ import { FirstNav,SecondNav,ThirdNav,BrotherList } from './Functions';
 import ModeToggler from './ModeToggler'
 import Btn,{FirstBtn,SecondBtn,ThirdBtn,FourthBtn,RandomNumber} from './Btn';
 import Card from './Card';
-import React, {useState} from "react"
+
+
+
+
+import React, {useState,useEffect} from "react"
+import Time from './Time';
 
 
 const bool=false
@@ -77,6 +82,18 @@ numbers.forEach(number =>{
 }
 function App(){
   const [isDarkMode,setIsDarkMode]=useState(false) 
+  // const date=new Date()
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000); // Update time every second
+
+    // Cleanup function to avoid memory leaks when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []); // Empty dependency array: Effect runs only once on mount
+
 
   function handleClick(){
      
@@ -96,6 +113,7 @@ function App(){
            <button onClick={handleClick} onClickCapture={handle}>
                {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
           </button>
+          {<Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>}
           {<App01/>}
       </div>
   )
