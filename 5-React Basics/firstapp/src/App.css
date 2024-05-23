@@ -61,6 +61,8 @@
 }
 .btn{
   color: #282c34;
+  border-radius: 5px;
+  border: 1px solid transparent;
 }
 .btn:hover{
   font-size: large;

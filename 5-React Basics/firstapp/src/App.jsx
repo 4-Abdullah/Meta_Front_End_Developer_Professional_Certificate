@@ -11,12 +11,12 @@ import { FirstNav,SecondNav,ThirdNav,BrotherList } from './Functions';
 import ModeToggler from './ModeToggler'
 import Btn,{FirstBtn,SecondBtn,ThirdBtn,FourthBtn,RandomNumber} from './Btn';
 import Card from './Card';
-
-
-
-
+import {Form, InputUseState, TextInputWithFocusButton} from './Hooks';
 import React, {useState,useEffect} from "react"
 import Time from './Time';
+
+
+
 
 
 const bool=false
@@ -62,6 +62,9 @@ numbers.forEach(number =>{
       <FourthBtn/>
       <RandomNumber/>
       <ModeToggler/>
+      <InputUseState/>
+      <Form/>
+      <TextInputWithFocusButton/>
       <Cover>
         <Apples color="Yellow" number="6"/>
         <Pears friend="Peter"/>
