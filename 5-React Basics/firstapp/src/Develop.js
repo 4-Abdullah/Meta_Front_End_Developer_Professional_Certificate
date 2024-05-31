@@ -14,7 +14,8 @@ import Pears from './Pears';
 import Promo from './Promo';
 import Apples from './Apples';
 import { useState,useReducer } from 'react';
-
+import { ConditionalRenderingProps, LogicalExample } from './components/Conditional Rendering/ConditionalRendering';
+/* eslint-disable */ 
 const bool=false
 const str1="just"
 function Example(props){
@@ -34,6 +35,7 @@ const reducer=(state,action)=>{
 }
 
 function Develop() {
+  const today=new Date().getDay()
   const initialState = {money:100}
   const [state,dispatch] = useReducer(reducer,initialState);
   const [fruits] = useState([
@@ -60,6 +62,8 @@ function Develop() {
       <InputUseState/>
       <Form/>
       <TextInputWithFocusButton/>
+      <ConditionalRenderingProps day={today}/>
+      <LogicalExample/>
       <MealsProvider>
       <MealsList/>
       <Counter list={fruits}/>

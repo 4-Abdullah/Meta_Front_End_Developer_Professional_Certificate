@@ -9,6 +9,8 @@ import Footer from './components/Footer.js'
 import Develop from './Develop'
 import Card from './Card';
 import Apples from './Apples';
+import LogInOutButton from './components/LogInOutButton/LogInOutButton.js';
+import RoutineTask from './components/RoutineTask.js';
 function App(){
   const [isDarkMode,setIsDarkMode]=useState(false) 
   // const date=new Date()
@@ -43,7 +45,9 @@ function App(){
            <button onClick={handleClick} onClickCapture={handle}>
                {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
           </button>
-          {<Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>}
+        <LogInOutButton isLoggedIn={false}/>
+        <RoutineTask/>
+          <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
       <Routes>   
             <Route path='./' element={<App/>}/>
             <Route path="/About" element={<About/>}/>
