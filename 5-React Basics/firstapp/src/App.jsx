@@ -11,6 +11,9 @@ import Card from './Card';
 import Apples from './Apples';
 import LogInOutButton from './components/LogInOutButton/LogInOutButton.js';
 import RoutineTask from './components/RoutineTask.js';
+import MultiMedia from './components/Media/MultiMedia'
+import {Image} from './components/Media/Image';
+import ReactPlay from './components/Media/ReactPlayer';
 function App(){
   const [isDarkMode,setIsDarkMode]=useState(false) 
   // const date=new Date()
@@ -37,7 +40,7 @@ function App(){
   }
   const handle=()=>{
       setIsDarkMode(!isDarkMode)
-
+    
   }
   return(
       <div className={isDarkMode?"Dark":"Light"}>
@@ -47,6 +50,9 @@ function App(){
           </button>
         <LogInOutButton isLoggedIn={false}/>
         <RoutineTask/>
+        <Image/>
+        <ReactPlay/>
+        <MultiMedia/>
           <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
       <Routes>   
             <Route path='./' element={<App/>}/>
