@@ -50,8 +50,6 @@ function App(){
           </button>
         <LogInOutButton isLoggedIn={false}/>
         <RoutineTask/>
-        <Image/>
-        <ReactPlay/>
         <MultiMedia/>
           <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
       <Routes>   
