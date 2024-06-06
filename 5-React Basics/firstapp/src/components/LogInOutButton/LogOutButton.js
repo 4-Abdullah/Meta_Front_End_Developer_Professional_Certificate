@@ -1,7 +1,7 @@
-function LogOutButton(){
+function LogOutButton(props){
     return(
         <>
-            <button>LogOut</button>
+            <button className='login-btn' onClick={props.btn}>LogOut</button>
         </>
     )
 }

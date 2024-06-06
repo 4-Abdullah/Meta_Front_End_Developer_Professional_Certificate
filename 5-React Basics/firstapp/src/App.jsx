@@ -12,8 +12,7 @@ import Apples from './Apples';
 import LogInOutButton from './components/LogInOutButton/LogInOutButton.js';
 import RoutineTask from './components/RoutineTask.js';
 import MultiMedia from './components/Media/MultiMedia'
-import {Image} from './components/Media/Image';
-import ReactPlay from './components/Media/ReactPlayer';
+
 function App(){
   const [isDarkMode,setIsDarkMode]=useState(false) 
   // const date=new Date()

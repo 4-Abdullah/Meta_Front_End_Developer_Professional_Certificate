@@ -1,7 +1,8 @@
-function LogInButton(){
+function LogInButton(props){
     return(
         <>
-            <button>LogIn</button>
+            <button className='login-btn' onClick={props.btn}>LogIn</button>
+
         </>
     )
 }
