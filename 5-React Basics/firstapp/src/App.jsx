@@ -12,7 +12,8 @@ import Apples from './Apples';
 import LogInOutButton from './components/LogInOutButton/LogInOutButton.js';
 import RoutineTask from './components/RoutineTask.js';
 import MultiMedia from './components/Media/MultiMedia'
-
+import Soundtrack from './components/Soundtrack'
+import Calculator from './components/Calculator.js';
 function App(){
   const [isDarkMode,setIsDarkMode]=useState(false) 
   // const date=new Date()
@@ -50,6 +51,11 @@ function App(){
         <LogInOutButton isLoggedIn={false}/>
         <RoutineTask/>
         <MultiMedia/>
+        {/* <br/> */}
+        <hr/>
+        {/* <br/> */}
+        <Soundtrack/>
+        <Calculator/>
           <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
       <Routes>   
             <Route path='./' element={<App/>}/>

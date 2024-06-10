@@ -2,6 +2,13 @@
   text-align: center;
   /* background-color: #000; */
 }
+.Calculator{
+  text-align: center;
+  font-size: 20px;
+}
+.input{
+  font-size: 20px;
+}
 .Dark{
   color: rgb(206, 205, 205);
   background-color: #282c34;
@@ -71,7 +78,7 @@ nav{
 }
 .login-btn{
   position:absolute;
-  right: 0%;
+  right: -0.2%;
 }
 .ReactPlayer-btn{
   position:absolute;
@@ -79,14 +86,16 @@ nav{
 }
 button{
   color: #282c34;
+  background-color: aqua;
   border-radius: 5px;
-  gap: 5px;
+  padding: 10px;
   border: 1px solid transparent;
-  font-size:medium
+  font-size:medium;
+  margin-right: 5px;
 }
 button:hover{
   color: #61dafb;
-  background-color: aquamarine;
+  background-color: rgb(0, 0, 0);
   border-radius: 5px;
   border: 1px solid transparent;
 }
