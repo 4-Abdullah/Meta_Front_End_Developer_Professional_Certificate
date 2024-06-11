@@ -14,6 +14,8 @@ import RoutineTask from './components/RoutineTask.js';
 import MultiMedia from './components/Media/MultiMedia'
 import Soundtrack from './components/Soundtrack'
 import Calculator from './components/Calculator.js';
+import { DessertProvider } from './UseContext.jsx';
+import FeaturedDessertList from './components/FeaturedDesertList.jsx'
 function App(){
   const [isDarkMode,setIsDarkMode]=useState(false) 
   // const date=new Date()
@@ -51,9 +53,7 @@ function App(){
         <LogInOutButton isLoggedIn={false}/>
         <RoutineTask/>
         <MultiMedia/>
-        {/* <br/> */}
         <hr/>
-        {/* <br/> */}
         <Soundtrack/>
         <Calculator/>
           <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
@@ -63,6 +63,9 @@ function App(){
             <Route path="/Footer" element={<Footer/>}/>
             <Route path="/Develop" element={<Develop/>}/>
             <Route path="/Card" element={<Card/>}/>
+            <Route path="/FeaturedFoodList" element={<DessertProvider>
+                                                           <FeaturedDessertList/>
+                                                      </DessertProvider>}/>
             <Route path="/Apples" element={<Apples/>}/>
       </Routes>
       </div>

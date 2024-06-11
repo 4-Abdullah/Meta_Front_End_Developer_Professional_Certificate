@@ -14,3 +14,37 @@ const MealsProvider=({children})=>{
 
 export const UseMealslistContext=()=>useContext(MealsContext)
 export default MealsProvider
+
+const DessertContext=createContext(null)
+const desserts = [
+  {
+    name: "Chocolate Cake",
+    calories: 400,
+    createdAt: "2024-06-11",
+  },
+  {
+    name: "Ice Cream",
+    calories: 200,
+    createdAt: "2024-06-10",
+  },
+  {
+    name: "Tiramisu",
+    calories: 300,
+    createdAt: "2024-06-05",
+  },
+  {
+    name: "Cheesecake",
+    calories: 600,
+    createdAt: "2024-06-11",
+  },
+];
+export const DessertProvider=({children})=>{
+    const [AfterMeals]=useState(desserts)
+    return(
+        <DessertContext.Provider value={{AfterMeals}}>
+            {children}
+        </DessertContext.Provider>
+    )
+}
+
+export const UseDessertlistContext=()=>useContext(DessertContext)
