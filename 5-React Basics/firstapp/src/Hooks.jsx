@@ -28,13 +28,16 @@ export function Form(){
 
     return(
         <div>
-            <label for="fname">First Name</label>
+            {/* In JSX, you need to use htmlFor to achieve the same association
+                because for is a reserved keyword in JavaScript 
+                and htmlFor aligns with the DOM API property name. */}
+            <label htmlFor="fname">First Name</label>
             <input type="text" name="fname"  value={form.firstName} onChange={handleform}/>
             
-            <label for="lname">Last Name</label>
+            <label htmlFor="lname">Last Name</label>
             <input type="text" name="lname"  value={form.lastName} onChange={handleform}/>
             
-            <label for="email">email</label>
+            <label htmlFor="email">email</label>
             <input type="text" name="email"  value={form.email} onChange={handleform}/>
 
         </div>
