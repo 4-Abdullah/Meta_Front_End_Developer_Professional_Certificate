@@ -18,8 +18,9 @@ import { DessertProvider, ThemeProvider, useTheme } from './UseContext.jsx';
 import FeaturedDessertList from './components/FeaturedDesertList.jsx'
 import Reverse from './components/Reverse.jsx';
 import Toggle from './components/Switch/Toggle.jsx';
-import Root from './components/Switch/Root.jsx';
-import { LittleLemonChat } from './components/LittleLemonChat.jsx';
+import Goals from './components/Goals.jsx';
+import UseMemo from './components/UseMemo.jsx';
+import Fetch from './components/Fetch.jsx';
 
 const App=()=>{
   const [isDarkMode,setIsDarkMode]=useState(false) 
@@ -60,22 +61,23 @@ const  App01=()=> {
   return (
   <div className={changeMode?(isDarkMode?"Dark":"Light"):(theme==='Dark'?'Dark':'Light')}>
     <Toggle toggle={themeHandle}/>
-    
       <Nav/>
            <button onClick={handle} onClickCapture={toggleTheme}>
            {changeMode?(isDarkMode?'Switch to Light Mode':'Switch to Dark Mode'):(theme==='Light'?'Switch to Dark Mode':'Switch to Light Mode')}   
           </button>  
         <LogInOutButton isLoggedIn={false}/>
         <h1>Little Lemon 🍕</h1>
+        <UseMemo a={'Eat'} b={'Food'}/>
+        <Fetch/>
         <RoutineTask/>
         <MultiMedia/>
         <hr/>
         <Soundtrack/>
         <Calculator/>
         <Reverse/>
-          <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
+          {/* <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/> */}
       <Routes>   
-            <Route path='./' element={<App/>}/>
+            <Route path='/App' element={<App/>}/>
             <Route path="/About" element={<About/>}/>
             <Route path="/Form" element={<Form/>}/>
             <Route path="/Develop" element={<Develop/>}/>
@@ -83,7 +85,7 @@ const  App01=()=> {
             <Route path="/FeaturedFoodList" element={<DessertProvider>
                                                            <FeaturedDessertList/>
                                                       </DessertProvider>}/>
-            <Route path="/Apples" element={<Apples/>}/>
+            <Route path="/Goals" element={<Goals/>}/>
       </Routes>
         
        </div>
