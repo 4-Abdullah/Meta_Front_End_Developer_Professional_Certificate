@@ -1,7 +1,7 @@
 import React, {useContext, useState } from 'react'
 import { createContext } from 'react'
 
- const MealsContext=createContext(null)
+const MealsContext=createContext(null)
 const Todaymeals=['Baked Beans','Baked Sweet Potatoes','Baked Potatoes']
 const MealsProvider=({children})=>{
     const [Meals]=useState(Todaymeals)
@@ -14,6 +14,7 @@ const MealsProvider=({children})=>{
 
 export const UseMealslistContext=()=>useContext(MealsContext)
 export default MealsProvider
+
 
 const DessertContext=createContext(null)
 const desserts = [
@@ -48,3 +49,15 @@ export const DessertProvider=({children})=>{
 }
 
 export const UseDessertlistContext=()=>useContext(DessertContext)
+
+
+const ThemeContext = createContext(null);
+export const ThemeProvider = ({ children }) => {
+    const [theme,setTheme]=useState('Light')
+    
+return(
+    <ThemeContext.Provider value={{ theme, toggleTheme: () => setTheme((prevTheme) => (prevTheme === 'Light' ? 'Dark' : 'Light')) }}>
+            {children}
+        </ThemeContext.Provider>
+)}
+export const useTheme = () => useContext(ThemeContext);

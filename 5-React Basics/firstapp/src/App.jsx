@@ -5,8 +5,8 @@ import Time from './Time';
 import {Routes,Route} from 'react-router-dom'
 import About from './components/About.js'
 import Nav from './components/Nav.jsx';
-import Footer from './components/Footer.js'
-import Develop from './Develop'
+import Form from './components/Form.jsx';
+import Develop from './Develop';
 import Card from './Card';
 import Apples from './Apples';
 import LogInOutButton from './components/LogInOutButton/LogInOutButton.js';
@@ -14,53 +14,70 @@ import RoutineTask from './components/RoutineTask.js';
 import MultiMedia from './components/Media/MultiMedia'
 import Soundtrack from './components/Soundtrack'
 import Calculator from './components/Calculator.js';
-import { DessertProvider } from './UseContext.jsx';
+import { DessertProvider, ThemeProvider, useTheme } from './UseContext.jsx';
 import FeaturedDessertList from './components/FeaturedDesertList.jsx'
-function App(){
+import Reverse from './components/Reverse.jsx';
+import Toggle from './components/Switch/Toggle.jsx';
+import Root from './components/Switch/Root.jsx';
+import { LittleLemonChat } from './components/LittleLemonChat.jsx';
+
+const App=()=>{
   const [isDarkMode,setIsDarkMode]=useState(false) 
   // const date=new Date()
   const [currentTime, setCurrentTime] = useState(new Date());
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
+  const [changeMode, setChangeMode]=useState(true)
+// Remember
+// Use an empty array if you want the effect to run only once (on mount).
+// Omit the array if you want the effect to run on every render.
+// Specify dependencies in the array if you want the effect to run based on specific changes.
+  const intervalId = setInterval(() => {   
+      // Update time every second
       setCurrentTime(new Date());
-    }, 1000); // Update time every second
+    }, 1000);
+    useEffect(() => {
+  // Cleanup function to avoid memory leaks when the component unmounts
+    return ()=>clearInterval(intervalId)
+  }); 
+  useEffect(() => {
+  
+   return ()=>
+         document.title="Little Lemon"
+ },[]); 
 
-    // Cleanup function to avoid memory leaks when the component unmounts
-    return () => clearInterval(intervalId);
-  }, []); // Empty dependency array: Effect runs only once on mount
 
+const  App01=()=> {
+  const { theme,toggleTheme } = useTheme();
 
-  function handleClick(){
-     
-          if(isDarkMode===true){
-              console.log("Dark mode is on")
-          }    
-              else{
-                  console.log("Light mode is on")        
-              }
-  }
   const handle=()=>{
       setIsDarkMode(!isDarkMode)
-    
   }
-  return(
-      <div className={isDarkMode?"Dark":"Light"}>
-        <Nav/>
-           <button onClick={handleClick} onClickCapture={handle}>
-               {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-          </button>
+
+  const themeHandle=()=>{
+    setChangeMode(!changeMode)
+
+  }
+
+  return (
+  <div className={changeMode?(isDarkMode?"Dark":"Light"):(theme==='Dark'?'Dark':'Light')}>
+    <Toggle toggle={themeHandle}/>
+    
+      <Nav/>
+           <button onClick={handle} onClickCapture={toggleTheme}>
+           {changeMode?(isDarkMode?'Switch to Light Mode':'Switch to Dark Mode'):(theme==='Light'?'Switch to Dark Mode':'Switch to Light Mode')}   
+          </button>  
         <LogInOutButton isLoggedIn={false}/>
+        <h1>Little Lemon 🍕</h1>
         <RoutineTask/>
         <MultiMedia/>
         <hr/>
         <Soundtrack/>
         <Calculator/>
+        <Reverse/>
           <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
       <Routes>   
             <Route path='./' element={<App/>}/>
             <Route path="/About" element={<About/>}/>
-            <Route path="/Footer" element={<Footer/>}/>
+            <Route path="/Form" element={<Form/>}/>
             <Route path="/Develop" element={<Develop/>}/>
             <Route path="/Card" element={<Card/>}/>
             <Route path="/FeaturedFoodList" element={<DessertProvider>
@@ -68,7 +85,19 @@ function App(){
                                                       </DessertProvider>}/>
             <Route path="/Apples" element={<Apples/>}/>
       </Routes>
-      </div>
+        
+       </div>
+    );
+  }
+  
+ 
+  
+  return(
+      <div>
+      <ThemeProvider>
+       <App01/>
+        </ThemeProvider> 
+        </div>
   )
 }
 

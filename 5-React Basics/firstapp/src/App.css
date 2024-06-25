@@ -9,13 +9,16 @@
 .input{
   font-size: 20px;
 }
+
 .Dark{
-  color: rgb(206, 205, 205);
-  background-color: #282c34;
+  color:white;
+  background-color: black;
 }
 .Light{
-  background-color: aliceblue;
+  color:black;
+  background-color: white;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -78,7 +81,7 @@ nav{
 }
 .login-btn{
   position:absolute;
-  right: -0.2%;
+  right: 0%;
 }
 .ReactPlayer-btn{
   position:absolute;
@@ -107,4 +110,102 @@ button:hover{
   to {
     transform: rotate(360deg);
   }
+}
+
+.ReactPlayer {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  width: 30%;
+  box-sizing: border-box; /* Add this line */
+}
+.fApp {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* border-radius: 5px; */
+}
+
+fieldset {
+  display: flex;
+  width: 480px;
+  padding: 16px;
+  color: #ffffff;
+  background-color: #3d66ac;
+  border: 1px solid transparent;
+  border-radius:15px;
+  flex-direction: column;
+  /* background-color: tomato; */
+}
+
+label {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+sup {
+  color: red;
+  top: -2px;
+  font-size: 95%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+input,
+select {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 32px;
+  padding: 0 8px;
+}
+
+.Field {
+  position: relative;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.FieldError {
+  position: absolute;
+  bottom: -6px;
+  color: red;
+  font-size: 12px;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  padding: 12px;
+  width: 240px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: darkblue;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:disabled,
+.button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.alert{
+  background-color:#126529;
+   color: rgb(61, 235, 8);
+  border-radius: 5px;
 }
