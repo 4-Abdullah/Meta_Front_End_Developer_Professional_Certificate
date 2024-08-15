@@ -3,17 +3,10 @@
     border-radius: 100px;
 }
 
-.Card_style{
-    /* padding: 10px; */
+.Card_style{ 
     border-radius: 10px;
-    
     background-color: aliceblue;
     color: black;
-    /* text-align: left;
-    justify-content: left;
-    align-items: start;
-    align-content: start;
-    position: relative; */
 }
 .div_style{
     padding-left: 10px;
@@ -22,14 +15,11 @@
 .veiw_more{
     text-align:'left';
      width:'100%';
-
 }
 .text_style{
     color: darkgray;
 } 
 .cardimg_style{
-    /* padding: 1px; */
     border-radius: 10px;
     width: 100%;
-
 }
