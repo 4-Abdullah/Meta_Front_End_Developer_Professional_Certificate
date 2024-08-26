@@ -2,7 +2,8 @@
 import './App.css';
 import React, {useState,useEffect} from "react"
 import Time from './Time';
-import {Routes,Route} from 'react-router-dom'
+// import {Routes,Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import About from './components/About.js'
 import Nav from './components/Nav.jsx';
 import Form from './components/Form.jsx';
@@ -21,17 +22,52 @@ import Toggle from './components/Switch/Toggle.jsx';
 import Goals from './components/Goals.jsx';
 import UseMemo from './components/UseMemo.jsx';
 import Fetch from './components/Fetch.jsx';
+import Notfound from './components/Notfound.jsx'
 
 const App=()=>{
-  const [isDarkMode,setIsDarkMode]=useState(false) 
-  // const date=new Date()
+
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [changeMode, setChangeMode]=useState(true)
 // Remember
 // Use an empty array if you want the effect to run only once (on mount).
 // Omit the array if you want the effect to run on every render.
 // Specify dependencies in the array if you want the effect to run based on specific changes.
-  const intervalId = setInterval(() => {   
+  // const intervalId = setInterval(() => {   
+  //     // Update time every second
+  //     setCurrentTime(new Date());
+  //   }, 1000);
+  //   useEffect(() => {
+  // // Cleanup function to avoid memory leaks when the component unmounts
+  //   return ()=>clearInterval(intervalId)
+  // }); 
+  useEffect(() => {
+  
+            return ()=>
+                  document.title="Little Lemon"
+          },[]); 
+  
+
+  return(
+      <div>
+          
+      <ThemeProvider>
+        {/* <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/> */}
+       <App01/>
+        </ThemeProvider> 
+        </div>
+  )
+}
+
+export default App;
+
+
+const App01 = () => {
+  const { theme, toggleTheme } = useTheme();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [changeMode, setChangeMode] = useState(true);
+  //   // const date=new Date()
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+    const intervalId = setInterval(() => {   
       // Update time every second
       setCurrentTime(new Date());
     }, 1000);
@@ -39,28 +75,20 @@ const App=()=>{
   // Cleanup function to avoid memory leaks when the component unmounts
     return ()=>clearInterval(intervalId)
   }); 
-  useEffect(() => {
+  const handle = () => {
+    setIsDarkMode(!isDarkMode);
+  }
+
+  const themeHandle = () => {
+    setChangeMode(!changeMode);
+  }
+
   
-   return ()=>
-         document.title="Little Lemon"
- },[]); 
-
-
-const  App01=()=> {
-  const { theme,toggleTheme } = useTheme();
-
-  const handle=()=>{
-      setIsDarkMode(!isDarkMode)
-  }
-
-  const themeHandle=()=>{
-    setChangeMode(!changeMode)
-
-  }
-
   return (
-  <div className={changeMode?(isDarkMode?"Dark":"Light"):(theme==='Dark'?'Dark':'Light')}>
-    <Toggle toggle={themeHandle}/>
+    // <>
+    <div className={changeMode?(isDarkMode?"Dark":"Light"):(theme==='Dark'?'Dark':'Light')}>
+      
+      <Toggle toggle={themeHandle}/>
       <Nav/>
            <button onClick={handle} onClickCapture={toggleTheme}>
            {changeMode?(isDarkMode?'Switch to Light Mode':'Switch to Dark Mode'):(theme==='Light'?'Switch to Dark Mode':'Switch to Light Mode')}   
@@ -75,32 +103,22 @@ const  App01=()=> {
         <Soundtrack/>
         <Calculator/>
         <Reverse/>
-          {/* <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/> */}
-      <Routes>   
-            <Route path='/App' element={<App/>}/>
+           <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
+       <Routes>
+             <Route path="/" element={<></>}/>       
             <Route path="/About" element={<About/>}/>
-            <Route path="/Form" element={<Form/>}/>
-            <Route path="/Develop" element={<Develop/>}/>
-            <Route path="/Card" element={<Card/>}/>
-            <Route path="/FeaturedFoodList" element={<DessertProvider>
-                                                           <FeaturedDessertList/>
-                                                      </DessertProvider>}/>
-            <Route path="/Goals" element={<Goals/>}/>
-      </Routes>
+             <Route path="/Form" element={<Form/>}/>
+             <Route path="/Develop" element={<Develop/>}/>
+             <Route path="/Card" element={<Card/>}/>
+             <Route path="/FeaturedFoodList" element={<DessertProvider>
+                                                            <FeaturedDessertList/>
+                                                       </DessertProvider>}/>
+             <Route path="/Goals" element={<Goals/>}/>
+             <Route path="*" element={<Notfound/>}/>
+       </Routes>
         
-       </div>
-    );
-  }
-  
- 
-  
-  return(
-      <div>
-      <ThemeProvider>
-       <App01/>
-        </ThemeProvider> 
         </div>
-  )
+        // {/* </> */}
+  );
 }
-
-export default App;
+// export default App01;

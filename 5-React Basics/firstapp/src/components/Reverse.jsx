@@ -20,10 +20,17 @@ const Reverse=()=>{
             <tbody>
                 {todos.map((item,index)=>{
                 return(
-                    <div key={index}>
-                        <label htmlFor={item.id}>{item.id}</label>
-                        <input type="text" name={item.id}/>{item.createdAt}
-                    </div>
+                    <tr key={index}>
+                        <td>
+                            <label htmlFor={item.id}>{item.id}</label>
+                        </td>
+                        <td>
+                            <input type="text" name={item.id} id={item.id} />
+                        </td>
+                        <td>
+                            {item.createdAt}
+                        </td>
+                    </tr>
                     )
                 })}
             
