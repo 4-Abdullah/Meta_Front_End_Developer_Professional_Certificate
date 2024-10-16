@@ -23,7 +23,7 @@ import Goals from './components/Goals.jsx';
 import UseMemo from './components/UseMemo.jsx';
 import Fetch from './components/Fetch.jsx';
 import Notfound from './components/Notfound.jsx'
-
+import LittleLemon from './components/Little Lemon/App.jsx'
 const App=()=>{
 
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -103,6 +103,7 @@ const App01 = () => {
         <Soundtrack/>
         <Calculator/>
         <Reverse/>
+        <LittleLemon/>
            <Time localTime={currentTime.toLocaleTimeString([],{hour12:true})}/>
        <Routes>
              <Route path="/" element={<></>}/>       
