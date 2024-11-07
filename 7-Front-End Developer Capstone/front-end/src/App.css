@@ -1,0 +1,333 @@
+
+  
+  nav ul{
+    list-style:none;
+    gap: 10px; /* Adjust spacing between links */
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .nav-link{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  .App-header {
+    background-color: #10357d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(5px + 2vmin);
+  }
+  
+  nav{
+    display:flex;
+    flex-direction: column;
+    background-color:rgb(15, 15, 15);
+  }
+  
+  .App-link {
+    color: #ffffff;
+  }
+  .promo-section{
+    font-weight: bold;
+    line-height: 20px;
+  }
+
+  .login-btn{
+    position:absolute;
+    right: 0%;
+  }
+  .ReactPlayer-btn{
+    position:absolute;
+    right: 0%;
+  }
+  button{
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid transparent;
+    font-size:medium;
+    margin-right: 5px;
+  }
+  /* button:hover{
+    color: #555252;
+    background-color: rgb(28, 28, 28);
+    border-radius: 5px;
+    border: 1px solid transparent;
+  } */
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .ReactPlayer {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 30%;
+    box-sizing: border-box; /* Add this line */
+  }
+  .fApp {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    /* border-radius: 5px; */
+  }
+  
+  fieldset {
+    display: flex;
+    width: 480px;
+    padding: 16px;
+    color: #ffffff;
+    background-color: #3d66ac;
+    border: 1px solid transparent;
+    border-radius:15px;
+    flex-direction: column;
+    /* background-color: tomato; */
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  sup {
+    color: red;
+    top: -2px;
+    font-size: 95%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  input,
+  select {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 32px;
+    padding: 0 8px;
+  }
+  
+  .Field {
+    position: relative;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .FieldError {
+    position: absolute;
+    bottom: -6px;
+    color: red;
+    font-size: 12px;
+  }
+  
+  .Row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .button {
+    padding: 12px;
+    width: 240px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: darkblue;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .button:disabled,
+  .button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
+  
+  .alert{
+    background-color:#126529;
+     color: rgb(61, 235, 8);
+    border-radius: 5px;
+  }
+  .App {
+
+    padding-left: 150px;
+    background-color: #d9d9d9;
+    /* background-image:'lahore_karahi-1693344622456_1200x.jpg'; */
+
+  }
+.hero-image{
+     position:absolute;
+     /* right: 20%; */
+    z-index: -10;
+}
+.hero-content{
+  margin-left: 10%;  
+  width: 30%;
+  /* z-index: -20; */
+}
+.hero-heading-1{
+    height: 100%;
+    margin: 0%;
+    font-style: italic;
+    font-weight: bolder;
+    color: rgba(255, 230, 1, 1);
+    /* background-color: #10357d; */
+}
+
+.hero-heading-2{
+  height: 100%;
+  font-style: italic;
+  font-weight:lighter;
+  color: rgba(169, 169, 169, 1);
+  /* color: rgba(251, 251, 251, 1); */
+}
+.Specials{
+    margin-left: 10%;
+    /* padding-left: 100px; */
+}
+.Specials-button{
+    position: absolute;
+    right: 7%;
+}
+.Main-Special{
+     display: flex;
+     /* padding-left: 30px; */
+     gap: 10px;
+}
+.Card{
+    width: 30%;
+    /* height: 50%; */
+    background-color:#d9d9d9;
+    text-align: center;
+        border: 1px solid transparent; 
+        border-radius: 15px; 
+}
+.Card-Image{
+    width: 100%;
+    border-radius: 15px;
+    /* height: 100%; */
+}
+
+.Card-header{
+    font-weight: 500;
+   display: flex;
+   /* text-align: center; */
+   gap: 140px;
+   margin-left: 30px;
+
+}
+
+.Card-Description{
+    /* width: 100%;
+    height: 100px; */
+    font-style:italic;
+    text-align: left;
+    padding-left: 30px;
+}
+.Card-Button{
+    width: 140px;
+    /* height: 30px; */
+    font-size:medium; 
+    /* text-align: center; */
+    /* margin-left: 40px; */
+    margin-bottom: 10px;
+}
+.Card-title{
+   margin-left: 40px;
+   /* padding-left: 10px;  */
+}
+.Customer_pic{
+  /* border: 1px transparent; */
+  border-radius:10px;
+  /* width: 100%; */
+}
+.Review_All{
+  
+  padding: 30px;
+  /* padding-left: 30px; */
+  /* width: 100%; */
+    background-color: #d9d9d9;
+    /* background-color: rgb(218, 214, 183); */
+}
+.Review_Card{
+  width: 30%;
+  /* height: 50%; */
+  background-color:#ffffff;
+  text-align: center;
+      border: 1px solid transparent; 
+      /* border-radius: 15px;  */
+}
+.Main-Footer{
+  display: flex;
+  flex-direction: column;
+  /* padding-right: 10px; */
+  /* gap: 10px; */
+}
+.Doormat-navigation{
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 50px; */
+}
+.Footer-heading{
+  display: flex;
+  /* width: 100%; */
+  padding-left: 30px;
+  gap: 100px;
+}
+.Footer{
+  /* width: 100%; */
+  /* color: #ffffff; */
+  padding-left: 150px;
+  background-color: #d9d9d9;
+}
+.Footer-space{
+  padding-left: 70px;
+}
+.Footer-link{
+
+}
+.About{
+  margin-left: 15%;  
+  width: 30%;
+  /* padding-left: 150px; */
+  
+}
+.About-heading{
+  width: 50%;
+}
+.About-image-1{
+    position:absolute;
+    right: 15%;
+}
+.About-image-2{
+    position:absolute;
+    padding-top: 30px;
+    right: 30%;
+    /* bottom:0px; */
+}
+
+.Bookingform_style{
+  display: grid;
+  width: 100%;
+  max-width: 200px;
+  gap: 10px;
+ 
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
