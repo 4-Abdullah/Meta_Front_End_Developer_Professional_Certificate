@@ -5,28 +5,32 @@ import Card from "./Card";
 
 const projects = [
   {
-    title: "React Space",
+    title: "E-Shop Front-End",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
+      "Github link of JamStack",
     getImageSrc: () => require("../images/photo1.jpg"),
+    url:"https://github.com/4-Abdullah/jamstack-app",
   },
   {
-    title: "React Infinite Scroll",
+    title: "E-Shop Back-End",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
+      "Github link of Strapi",
     getImageSrc: () => require("../images/photo2.jpg"),
+    url:"https://github.com/4-Abdullah/back-end05",
   },
   {
-    title: "Photo Gallery",
+    title: "Portfolio",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
+      "Github link of Portfolio App",
     getImageSrc: () => require("../images/photo3.jpg"),
+    url:"https://github.com/4-Abdullah/Meta_Front_End_Developer_Professional_Certificate/tree/main/5-React%20Basics/PortfolioApp",
   },
   {
-    title: "Event planner",
+    title: "Capstone",
     description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
+      "Github link of Front-End",
     getImageSrc: () => require("../images/photo4.jpg"),
+    url:"https://github.com/4-Abdullah/Meta_Front_End_Developer_Professional_Certificate/tree/main/7-Front-End%20Developer%20Capstone/front-end",
   },
 ];
 
@@ -53,6 +57,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            url={project.url}
           />
         ))}
       </Box>

@@ -3,14 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const Card = ({ title, description, imageSrc }) => {
+const Card = ({ title, description, imageSrc, url }) => {
    return (
      <VStack
        color="black"
        backgroundColor="white"
        borderRadius="xl"
      >
-       <Image borderRadius="xl" src={imageSrc} width='100%' alt={title} />
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <Image borderRadius="xl" src={imageSrc} width="100%" alt={title} />
+      </a>
        <VStack spacing={4} p={4} alignItems="flex-start">
          <HStack justifyContent="space-between" alignItems="center">
            <Heading as="h3" size="md">
