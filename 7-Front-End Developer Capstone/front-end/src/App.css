@@ -162,23 +162,24 @@
      color: rgb(61, 235, 8);
     border-radius: 5px;
   }
-  .App {
-
+  .hero-main { 
     padding-left: 150px;
-    background-color: #d9d9d9;
-    /* background-image:'lahore_karahi-1693344622456_1200x.jpg'; */
-
-  }
-.hero-image{
-     position:absolute;
-     /* right: 20%; */
-    z-index: -10;
-}
-.hero-content{
-  margin-left: 10%;  
-  width: 30%;
-  /* z-index: -20; */
-}
+     /* background-color: #d9d9d9; */
+      background-image: url('./images/lahore_karahi-1693344622456_1200x.jpg');
+       background-size: cover; /* Adjust to make the background image cover the element */
+        background-position: center; /* Center the background image */
+       }
+   .hero-image {
+     position: absolute;
+     right: 20%; 
+     /* z-index: 10; */
+     }
+  .hero-content {
+     margin-left: 10%;
+      width: 30%;
+      
+      z-index: -20;
+     }
 .hero-heading-1{
     height: 100%;
     margin: 0%;
@@ -190,10 +191,17 @@
 
 .hero-heading-2{
   height: 100%;
+  font-size: large;
   font-style: italic;
   font-weight:lighter;
-  color: rgba(169, 169, 169, 1);
-  /* color: rgba(251, 251, 251, 1); */
+  color: rgb(169, 169, 169);
+}
+.hero-text{ 
+  /* color: rgb(255, 255, 255); */
+  color: rgb(255, 255, 255);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  font-style: italic;
 }
 .Specials{
     margin-left: 10%;
@@ -274,6 +282,7 @@
 .Main-Footer{
   display: flex;
   flex-direction: column;
+  color: aliceblue;
   /* padding-right: 10px; */
   /* gap: 10px; */
 }
@@ -289,16 +298,17 @@
   gap: 100px;
 }
 .Footer{
+  margin-top: auto;
   /* width: 100%; */
   /* color: #ffffff; */
   padding-left: 150px;
-  background-color: #d9d9d9;
+  background-color: #000000;
 }
 .Footer-space{
   padding-left: 70px;
 }
 .Footer-link{
-
+  color: aliceblue;
 }
 .About{
   margin-left: 15%;  
@@ -330,4 +340,11 @@
 .container {
   display: flex;
   justify-content: center;
+}
+
+/* Apply flexbox to the App container to ensure footer is pushed to the bottom */
+ .App {
+   display: flex;
+    flex-direction: column;
+     min-height: 100vh;
 }

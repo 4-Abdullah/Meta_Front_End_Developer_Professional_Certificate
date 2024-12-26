@@ -26,8 +26,9 @@ const Bookingform = (props) => {
         <input type="number" placeholder="1" min="1" max="10" id="guests" value={guestsnumber} onChange={(e)=>setguestsnumber(e.target.value)}/>
         <label htmlFor="occasion">Occasion</label>
         <select id="occasion" value={Occasion} onChange={(e)=>setOccasion(e.target.value)}>
-            <option>Birthday</option>
             <option>Anniversary</option>
+            <option>Birthday</option>
+            <option>Other</option>
         </select>
         <input type="submit" value="Make Your reservation" />
         </form>

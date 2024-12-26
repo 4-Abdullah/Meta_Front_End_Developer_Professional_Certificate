@@ -1,16 +1,8 @@
 import React from 'react'
-// import Logo from '../Asset 14@4x.png';
-// import something from '../images/something.jpg';
-// import BruschettaRezept from '../images/Bruschetta Rezept.jpg';
-// import salanty from '../images/salanty.jpg';
-// import salad from '../images/salad.jpg';
-// import grilledfish from '../images/grilledfish.jpg';
-// import lahorekarahi from '../images/lahore_karahi-1693344622456_1200x.jpg';
 import review_1 from '../images/1-review.jpeg';
 import review_2 from '../images/2-review.jpg';
 import review_3 from '../images/3-review.jpeg';
 import review_4 from '../images/4-review.jpg';
-// import review_5 from '../images/5-review.jpg';
 
 const CustomersSay=()=>{
     const Star=()=>{
@@ -34,17 +26,20 @@ const CustomersSay=()=>{
         )
     }
     return(
-         <div className='Review_All'>   
+         <div className='Review_All'>
+            <h1 id="Review-section">Reviews</h1>   
     <main className='Main-Special'>
         <div className='Review_Card'> 
             <h5>David</h5> 
             <img className='Customer_pic' src={review_1} alt='customer pic' height={100} width={200}/>
+            <br/>
            <Star/>
             <p>Little Lemon is a hidden gem! The ambiance is cozy and perfect for a casual dinner. The Mediterranean dishes are authentic and flavorful. I highly recommend the lamb kebabs and the baklava for dessert.” !Lamb Kebabs</p> 
         </div>
         <div className='Review_Card'> 
             <h5>John</h5> 
             <img className='Customer_pic'  src={review_2} alt='customer pic' height={100} width={200}/>
+            <br/>
             <Star/> 
             <p>“I had a wonderful experience at Little Lemon. The staff was friendly and attentive, and the food was outstanding. The Greek salad was fresh and delicious, and the hummus platter was a great starter. Will definitely be coming back!” !Greek Salad</p> 
         </div>
@@ -58,6 +53,7 @@ const CustomersSay=()=>{
         <div className='Review_Card'> 
             <h5>Mavrik</h5> 
             <img className='Customer_pic'  src={review_4} alt='customer pic' height={100} width={200}/>
+            <br/>
             <Star/> 
             <p>Little Lemon is my favorite spot for a relaxed meal with friends. The atmosphere is warm and inviting, making it a perfect place to unwind. The moussaka was absolutely delicious, with layers of eggplant, minced meat, and creamy béchamel sauce that melted in my mouth.</p> 
         </div>

@@ -3,8 +3,8 @@ import Mario from '../images/Mario.jpg';
 const Lahore=()=>{
     
     return(
-        <main className='About'>
-            
+        <main className='About' >
+            <h1 id="About-section">About</h1>
             <img  className='About-image-1' src={Mario} alt='Logo'  width={250} height={280}/> 
             <img  className='About-image-2' src={Adrian} alt='Logo' width={250} height={280}/> 
             <h1 className='hero-heading-1'>Little Lemon<br/><div className="hero-heading-2"> Lahore </div>
