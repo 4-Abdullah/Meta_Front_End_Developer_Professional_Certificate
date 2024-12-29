@@ -7,29 +7,29 @@ const projects = [
   {
     title: "E-Shop Front-End",
     description:
-      "Github link of JamStack",
-    getImageSrc: () => require("../images/photo1.jpg"),
+      "E-Shop Application is an online store to buy products. The visitors can browse products, view products details. Register users will be able to purchase the products.",
+    getImageSrc: () => require("../images/eshop-homepage.jpeg"),
     url:"https://github.com/4-Abdullah/jamstack-app",
   },
   {
     title: "E-Shop Back-End",
     description:
       "Github link of Strapi",
-    getImageSrc: () => require("../images/photo2.jpg"),
+    getImageSrc: () => require("../images/strapi-homepage.jpeg"),
     url:"https://github.com/4-Abdullah/back-end05",
   },
   {
     title: "Portfolio",
     description:
       "Github link of Portfolio App",
-    getImageSrc: () => require("../images/photo3.jpg"),
+    getImageSrc: () => require("../images/portfolio-homepage.png"),
     url:"https://github.com/4-Abdullah/Meta_Front_End_Developer_Professional_Certificate/tree/main/5-React%20Basics/PortfolioApp",
   },
   {
     title: "Capstone",
     description:
-      "Github link of Front-End",
-    getImageSrc: () => require("../images/photo4.jpg"),
+      "Github link of Little-Lemon",
+    getImageSrc: () => require("../images/Little-lemon-Homepage.jpeg"),
     url:"https://github.com/4-Abdullah/Meta_Front_End_Developer_Professional_Certificate/tree/main/7-Front-End%20Developer%20Capstone/front-end",
   },
 ];
