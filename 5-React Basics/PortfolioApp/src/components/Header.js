@@ -12,23 +12,23 @@ import { Box, HStack, Link } from "@chakra-ui/react";
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto: hello@example.com",
+    url: "mailto: abdullahmaliksher@gmail.com",
   },
   {
     icon: faGithub,
-    url: "https://github.com",
+    url: "https://github.com/4-Abdullah",
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com",
+    url: "https://www.linkedin.com/in/abdullah-malik-sher-125174267",
   },
   {
     icon: faMedium,
-    url: "https://medium.com",
+    url: "https://medium.com/@abdullahmaliksher",
   },
   {
     icon: faStackOverflow,
-    url: "https://stackoverflow.com",
+    url: "https://stackoverflow.com/users/22982603/rising-sun",
   },
 ];
 
@@ -93,7 +93,7 @@ const Header = () => {
             <HStack>
               {socials.map((social, index) => {
                 return(
-                <Box key={index}><a  href={social.url} >
+                <Box key={index}><a target="_blank"  href={social.url} >
                     <FontAwesomeIcon icon={social.icon} size='2x'/>
                 </a></Box>)
               })}
