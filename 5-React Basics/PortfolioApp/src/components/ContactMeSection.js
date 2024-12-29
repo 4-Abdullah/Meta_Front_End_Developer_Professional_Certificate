@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"; 
+import React, { useEffect, useRef } from "react"; 
 import { useFormik } from "formik"; 
 import { 
  Box, 
@@ -15,34 +15,52 @@ import {
 import * as Yup from 'yup'; 
 import FullScreenSection from "./FullScreenSection"; 
 import useSubmit from "../hooks/useSubmit"; 
-import {useAlertContext} from "../context/alertContext"; 
- 
-/** 
-* Covers a complete form implementation using formik and yup for validation 
-*/ 
+import { useAlertContext } from "../context/alertContext"; 
+import emailjs from '@emailjs/browser';
+
 const ContactMeSection = () => { 
- const {isLoading, response, submit} = useSubmit(); 
+ const { isLoading, response, submit } = useSubmit(); 
  const { onOpen } = useAlertContext(); 
- 
- const formik = useFormik({ 
-   initialValues: { 
-     firstName: "", 
-     email: "", 
-     type: "hireMe", 
-     comment: "", 
-   }, 
-   onSubmit: (values) => { 
-     submit('https://john.com/contactme', values); 
-   }, 
-   validationSchema: Yup.object({ 
-     firstName: Yup.string().required("Required"), 
-     email: Yup.string().email("Invalid email address").required("Required"), 
-     comment: Yup.string() 
-       .min(25, "Must be at least 25 characters") 
-       .required("Required"), 
-   }), 
+ const form = useRef();
+
+ const sendEmail = (values) => {
+    const emailParams = { 
+      sender_name: values.sender_name,
+      sender_email: values.sender_email,
+      message: values.message,
+    };
+    emailjs.send(
+      'service_ntw7y5b', 
+      'template_5sxub7k', 
+      emailParams, 
+      's9eRI1LhgJ5VEYx3R'
+    )
+    .then(() => {
+      console.log('SUCCESS!');
+    }, (error) => {
+      console.log('FAILED...', error.text);
+    });
+ };
+
+ const formik = useFormik({
+    initialValues: { 
+      sender_name: "", 
+      sender_email: "", 
+      message: "", 
+    },
+    onSubmit: (values) => { 
+      sendEmail(values); 
+      console.log(values); 
+    },
+    validationSchema: Yup.object({ 
+      sender_name: Yup.string().required("Required"), 
+      sender_email: Yup.string().email("Invalid email address").required("Required"), 
+      message: Yup.string() 
+        .min(25, "Must be at least 25 characters") 
+        .required("Required"), 
+    }), 
  }); 
- 
+
  useEffect(() => { 
    if (response) { 
      onOpen(response.type, response.message); 
@@ -51,8 +69,8 @@ const ContactMeSection = () => {
      } 
    } 
  }, [response]); 
- 
- return ( 
+
+ return (
    <FullScreenSection 
      isDarkBackground 
      backgroundColor="#512DA8" 
@@ -64,46 +82,37 @@ const ContactMeSection = () => {
          Contact me 
        </Heading> 
        <Box p={6} rounded="md" w="100%"> 
-         <form onSubmit={formik.handleSubmit}> 
+         <form ref={form} onSubmit={formik.handleSubmit}>
            <VStack spacing={4}> 
-             <FormControl isInvalid={!!formik.errors.firstName && formik.touched.firstName}> 
-               <FormLabel htmlFor="firstName">Name</FormLabel> 
+             <FormControl isInvalid={!!formik.errors.sender_name && formik.touched.sender_name}> 
+               <FormLabel htmlFor="sender_name">Name</FormLabel> 
                <Input 
-                 id="firstName" 
-                 name="firstName" 
-                 {...formik.getFieldProps("firstName")} 
+                 id="sender_name" 
+                 name="sender_name" 
+                 {...formik.getFieldProps("sender_name")} 
                /> 
-               <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage> 
+               <FormErrorMessage>{formik.errors.sender_name}</FormErrorMessage> 
              </FormControl> 
-             <FormControl isInvalid={!!formik.errors.email && formik.touched.email}> 
-               <FormLabel htmlFor="email">Email Address</FormLabel> 
+             <FormControl isInvalid={!!formik.errors.sender_email && formik.touched.sender_email}> 
+               <FormLabel htmlFor="sender_email">Email Address</FormLabel> 
                <Input 
-                 id="email" 
-                 name="email" 
+                 id="sender_email" 
+                 name="sender_email" 
                  type="email" 
-                 {...formik.getFieldProps("email")} 
+                 {...formik.getFieldProps("sender_email")} 
                /> 
-               <FormErrorMessage>{formik.errors.email}</FormErrorMessage> 
+               <FormErrorMessage>{formik.errors.sender_email}</FormErrorMessage> 
              </FormControl> 
-             <FormControl> 
-               <FormLabel htmlFor="type">Type of enquiry</FormLabel> 
-               <Select id="type" name="type" {...formik.getFieldProps("type")}> 
-                 <option value="hireMe">Freelance project proposal</option> 
-                 <option value="openSource"> 
-                   Open source consultancy session 
-                 </option> 
-                 <option value="other">Other</option> 
-               </Select> 
-             </FormControl> 
-             <FormControl isInvalid={!!formik.errors.comment && formik.touched.comment}> 
-               <FormLabel htmlFor="comment">Your message</FormLabel> 
+             
+             <FormControl isInvalid={!!formik.errors.message && formik.touched.message}> 
+               <FormLabel htmlFor="message">Your message</FormLabel> 
                <Textarea 
-                 id="comment" 
-                 name="comment" 
+                 id="message" 
+                 name="message" 
                  height={250} 
-                 {...formik.getFieldProps("comment")} 
+                 {...formik.getFieldProps("message")} 
                /> 
-               <FormErrorMessage>{formik.errors.comment}</FormErrorMessage> 
+               <FormErrorMessage>{formik.errors.message}</FormErrorMessage> 
              </FormControl> 
              <Button type="submit" colorScheme="purple" width="full" isLoading={isLoading}> 
                Submit 
@@ -113,7 +122,7 @@ const ContactMeSection = () => {
        </Box> 
      </VStack> 
    </FullScreenSection> 
- ); 
-}; 
- 
+ );
+};
+
 export default ContactMeSection;
