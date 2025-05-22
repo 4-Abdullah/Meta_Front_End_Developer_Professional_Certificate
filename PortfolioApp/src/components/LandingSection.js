@@ -4,7 +4,7 @@ import FullScreenSection from "./FullScreenSection";
 import mypic from '../images/mypic.png'
 import DownloadButton from "./Downloadbtn";
 const greeting = "Hello, I am Abdullah!";
-const bio1 = "A frontend developer";
+const bio1 = "A Full Stack Developer";
 const bio2 = "specialised in React";
 
 // Implement the UI for the LandingSection component according to the instructions.

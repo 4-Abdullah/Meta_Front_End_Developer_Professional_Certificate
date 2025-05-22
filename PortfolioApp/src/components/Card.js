@@ -3,17 +3,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const Card = ({ title, description, imageSrc, repo, site }) => {
+const Card = ({ title, description, imageSrc, repo, video }) => {
    return (
-     <VStack
+     <HStack
        color="black"
        backgroundColor="white"
        borderRadius="xl"
        overflow="hidden"
-       width={["30vw", "35vw", "40vw", "45vw"]}    // Adjusts width based on viewport size 
+      //  width={["30vw", "35vw", "40vw", "45vw"]}    
+      //  maxW="lg"
+       m="4"
+       p="4"
+     >
+     {/* <VStack
+       color="black"
+       backgroundColor="white"
+       borderRadius="xl"
+       overflow="hidden"
+       width={["30vw", "35vw", "40vw", "45vw"]}    
        maxW="lg"
        m="4"
-     >
+     > */}
       {/* <a href={url} target="_blank" rel="noopener noreferrer" style={{ width: "100%" }}> */}
         <Image borderRadius="xl" src={imageSrc} width={["30vw", "35vw", "40vw", "45vw"]} height={["30vh", "35vh", "40vh", "45vh"]} // Adjusts height based on viewport size
          alt={title} objectFit="cover" />
@@ -25,7 +35,7 @@ const Card = ({ title, description, imageSrc, repo, site }) => {
            </Heading>
            <HStack spacing={4} marginLeft="auto">
            <Button as={"button"} size={"md"} bgColor={"yellow.400"} minWidth="100px" _hover={{ bgColor:"yellow.300", color: "black" }}  onClick={() => window.open(`${repo}`, '_blank')}>Repo</Button>
-           <Button as={"button"} size={"md"} bgColor={"yellow.400"} minWidth="100px" _hover={{ bgColor:"yellow.300", color: "black" }} onClick={() => window.open(`${site}`, '_blank')}>Visit</Button>
+           <Button as={"button"} size={"md"} bgColor={"yellow.400"} minWidth="100px" _hover={{ bgColor:"yellow.300", color: "black" }} onClick={() => window.open(`${video}`, '_blank')}>Video</Button>
          </HStack>
          </HStack>
          <Text color="#64748b" fontSize={["sm", "md", "lg"]}>
@@ -37,7 +47,7 @@ const Card = ({ title, description, imageSrc, repo, site }) => {
          </HStack> */}
        </VStack>
        {/* </a> */}
-     </VStack>
+     </HStack>
    );
 };
 
