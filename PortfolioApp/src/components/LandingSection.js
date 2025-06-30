@@ -4,7 +4,7 @@ import FullScreenSection from "./FullScreenSection";
 import mypic from '../images/mypic.png'
 import DownloadButton from "./Downloadbtn";
 const greeting = "Hello, I am Abdullah!";
-const bio1 = "A Full Stack Developer";
+const bio1 = "A Developer";
 const bio2 = "specialised in React";
 
 // Implement the UI for the LandingSection component according to the instructions.
@@ -16,7 +16,7 @@ const LandingSection = () => (
     isDarkBackground
     backgroundColor="#2A4365"
   >
-   <VStack spacing={16}> 
+   <VStack spacing={6}> 
      <VStack spacing={4} alignItems="center"> 
        <Avatar 
          src={mypic} 
@@ -26,7 +26,7 @@ const LandingSection = () => (
        <Heading as="h4" size="md" noOfLines={1}> 
          {greeting} 
        </Heading>
-       <DownloadButton/>
+       {/* <DownloadButton/> */}
 
      </VStack>
     
