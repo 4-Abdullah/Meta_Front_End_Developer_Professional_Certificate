@@ -11,6 +11,16 @@ import { LuChevronDown } from "react-icons/lu"
 import { Menu,MenuButton,MenuItem,MenuList } from "@chakra-ui/react";
 const Featuredproject = [
   {
+    title: "Rebuilding Kamyabi Network",
+    description:
+      `Rebuilt the Kamyabi Network site using Next.js and Tailwind CSS, focusing on fast load times,
+       pixel-perfect layout, and responsive UI. The project replicates the original Framer design while
+        improving performance and scalability. Deployed with Vercel for continuous delivery.`,
+    getImageSrc: () => require("../images/Kamyabi Network.png"),
+    repo:"https://github.com/4-Abdullah/duetsch-consultancy/tree/dev-2",
+    site:"https://duetsch-consultancy-jf6sw52t6-abdullahs-projects-9847aa36.vercel.app/",
+  },
+  {
     title: "E-Commerce Store with MERN-Stack",
     description:
       `This project is a full-featured e-commerce platform built using the MERN stack
@@ -125,8 +135,9 @@ const ProjectsSection = () => {
                        <HStack spacing={4} marginLeft="auto">
                        <Button as={"button"} size={"md"} bgColor={"yellow.400"} minWidth="100px" _hover={{ bgColor:"yellow.300", color: "black" }}  onClick={() => window.open(`${project.repo}`, '_blank')}>Repo</Button>
                        <Button as={"button"} size={"md"} bgColor={"yellow.400"} minWidth="100px" _hover={{ bgColor:"yellow.300", color: "black" }} onClick={() => window.open(`${project.site}`, '_blank')}>Visit </Button>
+                       {project.adminsite?
                        <Button as={"button"} size={"md"} bgColor={"yellow.400"} minWidth="100px" _hover={{ bgColor:"yellow.300", color: "black" }} onClick={() => window.open(`${project.adminsite}`, '_blank')}>Admin</Button>
-                      
+                      :<></>}
                       {/* <ButtonGroup isAttached>
   <Button>Options</Button>
   <Menu>
