@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 import dynamic from "next/dynamic";
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X, Code2, Sparkles, ExternalLink, MoveUpRight, Braces, Globe2 } from "lucide-react";
-import { accents, projects, skills, EMAIL, GITHUB, LINKEDIN } from "@/lib/data";
+import { accents, projects, skills, EMAIL, GITHUB, LINKEDIN, specialties } from "@/lib/data";
 
 const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
 
@@ -93,9 +93,20 @@ export default function Home() {
         <div className="hero-bottom"><span>MERN STACK DEVELOPER · PAKISTAN</span><a href="#about">SCROLL TO DISCOVER <span className="scroll-line" /></a></div>
       </section>
 
-      <section className="ticker" aria-label="Specialties"><div className="ticker-track">
-        {[0, 1].map((i) => <div className="ticker-set" key={i}><span>FRONTEND DEVELOPMENT</span><i>✧</i><span>INTERACTIVE UI</span><i>✧</i><span>RESPONSIVE DESIGN</span><i>✧</i><span>CREATIVE PROBLEM SOLVING</span><i>✧</i></div>)}
-      </div></section>
+      <section className="ticker" aria-label="Specialties">
+            <div className="ticker-track">
+                {[0, 1].map((set) => (
+                  <div className="ticker-set" key={set} aria-hidden={set === 1}>
+                    {specialties.map((item) => (
+                      <Fragment key={item}>
+                        <span>{item}</span>
+                        <i>✧</i>
+                      </Fragment>
+                    ))}
+                  </div>
+                ))}
+            </div>
+      </section>
 
       <section id="work" className="section container">
         <motion.div className="section-heading" {...inView}><div><span className="section-index">01 / SELECTED WORK</span><h2>Things I&apos;ve <em>built.</em></h2></div><p>A selection of projects that reflect how I learn, build, and bring ideas to the browser. Hover a card and watch the scene change color.</p></motion.div>

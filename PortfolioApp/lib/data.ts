@@ -27,3 +27,16 @@ export const skills = [
 ];
 
 export const orbitSkills = ["React", "Next.js", "TypeScript", "Tailwind", "Node.js", "Express", "MongoDB", "Strapi", "PostgreSQL", "Redux", "Socket.IO", "React Native", "Vercel", "AWS"];
+
+export const specialties = [
+  "MERN STACK DEVELOPMENT",
+  "REACT & NEXT.JS",
+  "TYPESCRIPT",
+  "RESPONSIVE UI / UX",
+  "REAL-TIME APPS WITH SOCKET.IO",
+  "REST API INTEGRATION",
+  "HEADLESS CMS WITH STRAPI",
+  "PERFORMANCE & ACCESSIBILITY",
+  "AWS CLOUD FOUNDATIONS",
+  "VERCEL DEPLOYMENT",
+];
